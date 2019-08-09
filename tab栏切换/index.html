@@ -68,6 +68,19 @@
 
     </style>
     <script src="../jquery-1.12.2.js"></script>
+    <script>
+        //入口函数
+        $(function(){
+            //需求:点击图片 切换图片
+            $('.wrapper li').on('mouseover',function(){
+                //在中间加入类名不需要加点号   但获取元素需要
+                $(this).addClass('active').siblings().removeClass('active');
+                //相应的图片显示  第一获取index()索引值  在把索引值带入到图片中  利用排他思想
+               var index =  $(this).index();
+               $('.products .main').eq(index).addClass('selected').siblings().removeClass('selected');
+            })
+        })
+    </script>
 </head>
 <body>
 <div class="wrapper">
